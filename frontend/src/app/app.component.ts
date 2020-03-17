@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TeamService } from './services/team.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
+  private teams$ = this.teamService.getTeams();
+
+  constructor(private teamService: TeamService) {}
 }
